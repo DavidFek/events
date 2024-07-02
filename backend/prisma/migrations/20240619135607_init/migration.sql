@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `Event` MODIFY `likes` INTEGER NOT NULL DEFAULT 0,
+    MODIFY `dislikes` INTEGER NOT NULL DEFAULT 0;
