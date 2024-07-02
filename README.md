@@ -18,7 +18,7 @@ Docker
 1 - Create a .env file in the backend root folder with DATABASE_URL("mysql://root:password@mysql:3306/nestjs_prisma"),JWT_SECRET,MYSQL_DATABASE(nestjs_prisma) and MYSQL_ROOT_PASSWORD  
 2 - Make sure docker is running  
 3 - Navigate into the root folder of the project  
-4 - Run the following CLI command to create and start the docker images: docker-compose up -d  
+4 - Run the following CLI command to create and start the docker images: docker-compose up -d --build  
 5 - Once docker has finished creating and launching the images run the following command to initiate the database schema: docker-compose run backend npx prisma migrate deploy
 
 ## Usage
