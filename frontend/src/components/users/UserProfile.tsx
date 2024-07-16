@@ -14,7 +14,7 @@ const UserProfile = () => {
     role: undefined,
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const { setIsAdmin } = useUser();
+  const { isAdmin, setIsAdmin } = useUser();
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -91,16 +91,17 @@ const UserProfile = () => {
               className="border border-gray-300 p-2 rounded-lg w-full"
             />
           </label>
-          <select
-            name="role"
-            value={user.role}
-            onChange={handleChange}
-            className="border border-gray-300 p-2 rounded-lg w-full"
-          >
-            <option value="ADMIN">Admin</option>
-            <option value="USER">User</option>
-          </select>
-
+          {isAdmin && (
+            <select
+              name="role"
+              value={user.role}
+              onChange={handleChange}
+              className="border border-gray-300 p-2 rounded-lg w-full"
+            >
+              <option value="ADMIN">Admin</option>
+              <option value="USER">User</option>
+            </select>
+          )}
           <button type="submit" className="btn">
             Update Profile
           </button>

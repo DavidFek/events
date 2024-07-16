@@ -7,7 +7,7 @@ export default function RegisterForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
-  const [role, setRole] = useState<"ADMIN" | "USER">("USER");
+  // const [role, setRole] = useState<"ADMIN" | "USER">("USER");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -18,7 +18,7 @@ export default function RegisterForm() {
       email: username,
       password: password,
       name: fullName,
-      role: role,
+      role: "USER",
     };
     try {
       const response = await authService.createUser(newUser);
@@ -70,7 +70,7 @@ export default function RegisterForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <select
+        {/* <select
           className="p-2 rounded"
           value={role}
           onChange={(e) => {
@@ -86,7 +86,7 @@ export default function RegisterForm() {
         >
           <option value="ADMIN">ADMIN</option>
           <option value="USER">USER</option>
-        </select>
+        </select> */}
         <button className="btn" type="submit">
           Register
         </button>
