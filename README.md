@@ -19,7 +19,7 @@ Docker
 2 - Make sure docker is running  
 3 - Navigate into the root folder of the project  
 4 - Run the following CLI command to create and start the docker images: `docker-compose up -d --build`  
-5 - Once docker has finished creating and launching the images run the following command to initiate the database schema: `docker-compose run backend npx prisma migrate deploy`
+5 - Once docker has finished creating and launching the images run the following command to initiate the database schema: `docker-compose run backend npx prisma migrate deploy`  
 6 - After the database schema has been initiated, run the seed script to populate the database with initial data: `docker-compose run backend npx prisma db seed`
 
 ## Usage
