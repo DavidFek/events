@@ -26,7 +26,7 @@ export class EventsController {
   @UseGuards(RolesGuard)
   @Roles('ADMIN')
   @ApiOperation({ summary: 'Create an event' })
-  @ApiResponse({ status: 200, description: 'OK. Event created.' })
+  @ApiResponse({ status: 201, description: 'OK. Event created.' })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   create(@Body() createEventDto: CreateEventDto) {
     return this.eventsService.create(createEventDto);

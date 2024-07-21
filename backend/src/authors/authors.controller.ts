@@ -27,7 +27,7 @@ export class AuthorsController {
   @UseGuards(RolesGuard)
   @Roles('ADMIN')
   @ApiOperation({ summary: 'Create an author' })
-  @ApiResponse({ status: 200, description: 'OK. Author created.' })
+  @ApiResponse({ status: 201, description: 'OK. Author created.' })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   create(@Body() createAuthorDto: CreateAuthorDto) {
     return this.authorsService.create(createAuthorDto);
