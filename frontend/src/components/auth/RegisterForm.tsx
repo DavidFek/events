@@ -14,6 +14,12 @@ export default function RegisterForm() {
   const register = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(username)) {
+      setError("Invalid email address");
+      return;
+    }
+
     const newUser: CreateUserDto = {
       email: username,
       password: password,
@@ -91,7 +97,7 @@ export default function RegisterForm() {
           Register
         </button>
       </form>
-      {error && <p className="font-bold text-xl text-red-500">{error}</p>}
+      {error && <p className="font-bold text-xl text-red-600">{error}</p>}
     </>
   );
 }

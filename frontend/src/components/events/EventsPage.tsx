@@ -59,6 +59,30 @@ export default function EventsPage() {
   const createEvent = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    setError("");
+
+    // Check for missing fields
+    if (!name.trim()) {
+      setError("Event Name is required.");
+      return;
+    }
+    if (!dateFrom.trim()) {
+      setError("Start Date is required.");
+      return;
+    }
+    if (!dateTo.trim()) {
+      setError("End Date is required.");
+      return;
+    }
+    if (!description.trim()) {
+      setError("Description is required.");
+      return;
+    }
+    if (!createdBy.trim()) {
+      setError("Created By is required.");
+      return;
+    }
+
     const formattedDateFrom = formatISO(new Date(dateFrom));
     const formattedDateTo = formatISO(new Date(dateTo));
 
@@ -145,7 +169,7 @@ export default function EventsPage() {
               Create Event
             </button>
           </form>
-          {error && <p className="text-red-500">{error}</p>}
+          {error && <p className="text-red-600 text-2xl font-bold">{error}</p>}
         </div>
       )}
       <div className="w-full ">

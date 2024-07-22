@@ -63,6 +63,29 @@ export default function AuthorsPage() {
   const createAuthor = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    setError("");
+
+    if (!firstName.trim()) {
+      setError("First Name is required.");
+      return;
+    }
+    if (!lastName.trim()) {
+      setError("Last Name is required.");
+      return;
+    }
+    if (!bornDate.trim()) {
+      setError("Born Date is required.");
+      return;
+    }
+    if (!description.trim()) {
+      setError("Description is required.");
+      return;
+    }
+    if (!specializations.trim()) {
+      setError("Specializations is required.");
+      return;
+    }
+
     const formattedBornDate = formatISO(new Date(bornDate));
 
     const newAuthor: CreateAuthorDto = {
@@ -150,7 +173,7 @@ export default function AuthorsPage() {
               Create Author
             </button>
           </form>
-          {error && <p className="text-red-500">{error}</p>}
+          {error && <p className="text-red-600 text-2xl font-bold">{error}</p>}
         </div>
       )}
       <div className="w-full ">

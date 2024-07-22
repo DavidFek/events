@@ -51,6 +51,27 @@ export default function UsersPage() {
   const register = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    setError("");
+
+    if (!username.trim()) {
+      setError("Email is required.");
+      return;
+    }
+    if (!fullName.trim()) {
+      setError("Name is required.");
+      return;
+    }
+    if (!password.trim()) {
+      setError("Password is required.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(username)) {
+      setError("Invalid email address");
+      return;
+    }
+
     const newUser: CreateUserDto = {
       email: username,
       password: password,
@@ -103,7 +124,6 @@ export default function UsersPage() {
               placeholder="Email..."
               type="text"
               value={username}
-              required
               onChange={(e) => setUsername(e.target.value)}
             />
           </label>
@@ -114,7 +134,6 @@ export default function UsersPage() {
               placeholder="Name..."
               type="text"
               value={fullName}
-              required
               onChange={(e) => setFullName(e.target.value)}
             />
           </label>
@@ -125,7 +144,6 @@ export default function UsersPage() {
               placeholder="Password"
               type="password"
               value={password}
-              required
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
@@ -140,7 +158,6 @@ export default function UsersPage() {
                 console.error("Invalid role selected");
               }
             }}
-            required
           >
             <option value="ADMIN">ADMIN</option>
             <option value="USER">USER</option>
@@ -148,7 +165,7 @@ export default function UsersPage() {
           <button className="btn" type="submit">
             Register
           </button>
-          {error && <p className="text-red-500">{error}</p>}
+          {error && <p className="text-red-600 text-2xl font-bold">{error}</p>}
         </form>
       </div>
       <div className="w-full ">
