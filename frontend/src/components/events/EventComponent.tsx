@@ -3,6 +3,8 @@ import { Event as EventType } from "../../interfaces/interfaces";
 import { Link } from "react-router-dom";
 import { eventsService } from "../../services/api";
 import { useUser } from "../../providers/UserProvider";
+import likeImage from "../../assets/like.png";
+import dislikeImage from "../../assets/dislike.png";
 
 interface EventComponentProps {
   event: EventType;
@@ -142,10 +144,16 @@ const EventComponent: React.FC<EventComponentProps> = ({
               <button className="btn">Details</button>
             </Link>
             <button className="btn" onClick={handleLike}>
-              Like ({likes})
+              <div className="flex items-center space-x-2">
+                <img src={likeImage} alt="like" className="w-6 h-6" />
+                <span>Like ({likes})</span>
+              </div>
             </button>
             <button className="btn" onClick={handleDislike}>
-              Dislike ({dislikes})
+              <div className="flex items-center space-x-2">
+                <img src={dislikeImage} alt="dislike" className="w-6 h-6" />
+                <span>Dislike ({dislikes})</span>
+              </div>
             </button>
             {isAdmin && (
               <button className="btn" onClick={(e) => deleteEvent(id)}>
