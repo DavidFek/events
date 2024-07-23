@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { CreateAuthorDto } from "../../services/dto";
 import { formatISO } from "date-fns";
 import { useUser } from "../../providers/UserProvider";
+import addImage from "../../assets/add.png";
 
 export default function AuthorsPage() {
   const [authors, setAuthors] = useState<Author[]>([]);
@@ -170,7 +171,10 @@ export default function AuthorsPage() {
               className="border border-gray-300 p-2 rounded-lg w-full"
             />
             <button type="submit" className="btn">
-              Create Author
+              <div className="flex items-center space-x-2">
+                <img src={addImage} alt="update" className="w-6 h-6" />
+                <span>Create Author</span>
+              </div>
             </button>
           </form>
           {error && <p className="text-red-600 text-2xl font-bold">{error}</p>}

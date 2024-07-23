@@ -3,6 +3,10 @@ import { Event as EventType, Author } from "../../interfaces/interfaces";
 import { Link } from "react-router-dom";
 import { authorsService } from "../../services/api";
 import { useUser } from "../../providers/UserProvider";
+import deleteImage from "../../assets/delete.png";
+import detailsImage from "../../assets/details.png";
+import updateImage from "../../assets/update.png";
+import addImage from "../../assets/add.png";
 
 interface AuthorComponentProps {
   author: Author;
@@ -103,7 +107,10 @@ const AuthorComponent: React.FC<AuthorComponentProps> = ({
                 <p>{event.name}</p>
                 {isAdmin && (
                   <button className="btn" onClick={() => removeEvent(event.id)}>
-                    Remove
+                    <div className="flex items-center space-x-2">
+                      <img src={deleteImage} alt="delete" className="w-6 h-6" />
+                      <span>Remove</span>
+                    </div>
                   </button>
                 )}
               </div>
@@ -111,16 +118,29 @@ const AuthorComponent: React.FC<AuthorComponentProps> = ({
           </p>
           <div className="flex gap-4">
             <Link to={`/authors/${author.id}`} key={author.id}>
-              <button className="btn">Details</button>
+              <button className="btn">
+                <div className="flex items-center space-x-2">
+                  <img src={detailsImage} alt="details" className="w-6 h-6" />
+                  <span>Details</span>
+                </div>
+              </button>
             </Link>
             {isAdmin && (
               <button className="btn" onClick={(e) => deleteAuthor(id)}>
-                Delete
+                <div className="flex items-center space-x-2">
+                  <img src={deleteImage} alt="delete" className="w-6 h-6" />
+                  <span>Delete</span>
+                </div>
               </button>
             )}
             {isAdmin && (
               <Link to={`/authors/update/${author.id}`}>
-                <button className="btn">Update</button>
+                <button className="btn">
+                  <div className="flex items-center space-x-2">
+                    <img src={updateImage} alt="update" className="w-6 h-6" />
+                    <span>Update</span>
+                  </div>
+                </button>
               </Link>
             )}
           </div>
@@ -134,7 +154,10 @@ const AuthorComponent: React.FC<AuthorComponentProps> = ({
                 className="border border-gray-300 rounded-lg h-15 px-3"
               />
               <button className="btn" onClick={(e) => addEvent(+eventId)}>
-                Add Author
+                <div className="flex items-center space-x-2">
+                  <img src={addImage} alt="update" className="w-6 h-6" />
+                  <span>Add Event</span>
+                </div>
               </button>
               {}
             </div>

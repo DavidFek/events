@@ -4,6 +4,7 @@ import { UpdateUserDto } from "../../services/dto";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import { useUser } from "../../providers/UserProvider";
+import updateImage from "../../assets/update.png";
 
 const UserProfile = () => {
   const navigate = useNavigate();
@@ -103,7 +104,10 @@ const UserProfile = () => {
             </select>
           )}
           <button type="submit" className="btn">
-            Update Profile
+            <div className="flex items-center space-x-2">
+              <img src={updateImage} alt="update" className="w-6 h-6" />
+              <span>Update Profile</span>
+            </div>
           </button>
           <Modal
             isOpen={modalIsOpen}

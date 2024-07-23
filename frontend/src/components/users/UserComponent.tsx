@@ -2,6 +2,9 @@ import React from "react";
 import { User } from "../../interfaces/interfaces";
 import { usersService } from "../../services/api";
 import { Link } from "react-router-dom";
+import deleteImage from "../../assets/delete.png";
+import detailsImage from "../../assets/details.png";
+import updateImage from "../../assets/update.png";
 
 interface UserComponentProps {
   user: User;
@@ -53,13 +56,26 @@ const UserComponent: React.FC<UserComponentProps> = ({
                 deleteUser(id);
               }}
             >
-              Delete
+              <div className="flex items-center space-x-2">
+                <img src={deleteImage} alt="delete" className="w-6 h-6" />
+                <span>Delete</span>
+              </div>
             </button>
             <Link to={`/users/${id}`}>
-              <button className="btn">Details</button>
+              <button className="btn">
+                <div className="flex items-center space-x-2">
+                  <img src={detailsImage} alt="details" className="w-6 h-6" />
+                  <span>Details</span>
+                </div>
+              </button>
             </Link>
             <Link to={`/users/update/${id}`}>
-              <button className="btn">Update</button>
+              <button className="btn">
+                <div className="flex items-center space-x-2">
+                  <img src={updateImage} alt="update" className="w-6 h-6" />
+                  <span>Update</span>
+                </div>
+              </button>
             </Link>
           </div>
         </div>

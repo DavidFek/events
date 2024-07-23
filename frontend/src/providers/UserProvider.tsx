@@ -1,5 +1,11 @@
 // UserContext.tsx
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 
 interface UserContextType {
   isAdmin: boolean;
@@ -9,7 +15,14 @@ interface UserContextType {
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+  const [isAdmin, setIsAdmin] = useState<boolean>(() => {
+    const storedIsAdmin = localStorage.getItem("isAdmin");
+    return storedIsAdmin ? JSON.parse(storedIsAdmin) : false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
+  }, [isAdmin]);
 
   return (
     <UserContext.Provider value={{ isAdmin, setIsAdmin }}>

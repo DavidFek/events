@@ -4,6 +4,7 @@ import { usersService } from "../../services/api";
 import { User } from "../../interfaces/interfaces";
 import { CreateUserDto } from "../../services/dto";
 import { authService } from "../../services/publicApiClient";
+import addImage from "../../assets/add.png";
 
 export default function UsersPage() {
   const [users, setUsers] = useState<User[]>([]);
@@ -163,7 +164,10 @@ export default function UsersPage() {
             <option value="USER">USER</option>
           </select>
           <button className="btn" type="submit">
-            Register
+            <div className="flex items-center space-x-2">
+              <img src={addImage} alt="update" className="w-6 h-6" />
+              <span>Register</span>
+            </div>
           </button>
           {error && <p className="text-red-600 text-2xl font-bold">{error}</p>}
         </form>
