@@ -115,7 +115,7 @@ export default function UsersPage() {
           <option value="desc">Descending</option>
         </select>
       </div>
-      <div className="bg-gray-500 p-6 rounded-lg shadow mb-5">
+      <div className="bg-gray-500 p-6 rounded-lg shadow mb-5 shadow-2xl">
         <h2 className="text-xl font-semibold mb-4">Create user</h2>
         <form className="space-y-4" onSubmit={register}>
           <label>

@@ -138,7 +138,7 @@ export default function EventsPage() {
         </select>
       </div>
       {isAdmin && (
-        <div className="bg-gray-500 p-6 rounded-lg shadow mb-5">
+        <div className="bg-gray-500 p-6 rounded-lg  mb-5 shadow-2xl">
           <h2 className="text-xl font-semibold mb-4">Create Event</h2>
           <form onSubmit={createEvent} className="space-y-4">
             <input

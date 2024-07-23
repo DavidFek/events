@@ -76,7 +76,7 @@ const AuthorComponent: React.FC<AuthorComponentProps> = ({
   };
 
   return (
-    <div className="w-full mx-auto border border-gray-300 rounded-lg overflow-hidden p-4 mb-5">
+    <div className="w-full mx-auto border border-gray-300 rounded-lg overflow-hidden p-4 mb-5 shadow-2xl bg-gray-800">
       <Helmet>
         <title>{author.firstName + " " + author.lastName}</title>
         <meta name="specialization" content={author.specializations} />

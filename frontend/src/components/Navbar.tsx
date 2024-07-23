@@ -15,7 +15,7 @@ const Navbar = () => {
   const { isAdmin } = useUser();
 
   return (
-    <nav className="flex flex-col h-screen border-r-2 border-gray-600 w-64">
+    <nav className="flex flex-col h-screen border-r-2 border-gray-600 w-64 bg-gray-900 shadow-2xl">
       <ul className="flex flex-col h-full">
         <li className="border-b-2 border-gray-600">
           <Link to="/events" className="p-4 block hover:bg-gray-600">

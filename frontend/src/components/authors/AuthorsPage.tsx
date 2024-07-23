@@ -137,7 +137,7 @@ export default function AuthorsPage() {
         </select>
       </div>
       {isAdmin && (
-        <div className="bg-gray-500 p-6 rounded-lg shadow mb-5">
+        <div className="bg-gray-500 p-6 rounded-lg shadow-2xl mb-5">
           <h2 className="text-xl font-semibold mb-4">Create Author</h2>
           <form onSubmit={createAuthor} className="space-y-4">
             <input

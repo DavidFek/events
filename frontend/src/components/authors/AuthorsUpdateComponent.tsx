@@ -51,7 +51,7 @@ const AuthorsUpdateComponent = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="bg-gray-500 p-6 rounded-lg shadow mb-5 max-w-4xl">
+      <div className="bg-gray-500 p-6 rounded-lg mb-5 max-w-4xl shadow-2xl">
         <h2 className="text-xl font-semibold mb-4">Update Author</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <label>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { eventsService } from "../../services/api";
+import updateImage from "../../assets/update.png";
 
 const EventUpdateComponent = () => {
   const { eventId } = useParams<{ eventId: string }>();
@@ -50,8 +51,8 @@ const EventUpdateComponent = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="bg-gray-500 p-6 rounded-lg shadow mb-5 max-w-4xl">
+    <div className="flex justify-center items-center min-h-screen ">
+      <div className="bg-gray-500 p-6 rounded-lg mb-5 max-w-4xl shadow-2xl">
         <h2 className="text-xl font-semibold mb-4">Update Event</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <label>
@@ -106,11 +107,11 @@ const EventUpdateComponent = () => {
               className="border border-gray-300 p-2 rounded-lg w-full"
             />
           </label>
-          <button
-            type="submit"
-            className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700"
-          >
-            Update Event
+          <button type="submit" className="btn">
+            <div className="flex items-center space-x-2">
+              <img src={updateImage} alt="update" className="w-6 h-6" />
+              <span>Update Event</span>
+            </div>
           </button>
         </form>
       </div>

@@ -31,7 +31,7 @@ const UserComponent: React.FC<UserComponentProps> = ({
   }
 
   return (
-    <div className="w-full mx-auto border border-gray-300 rounded-lg overflow-hidden p-4 mb-5">
+    <div className="w-full mx-auto border border-gray-300 rounded-lg overflow-hidden p-4 mb-5 shadow-2xl bg-gray-800">
       <div className="md:flex">
         <div className="w-full p-4 flex flex-col gap-6">
           <h2 className="text-3xl font-semibold underline text-center pb-8">

@@ -22,7 +22,7 @@ const UserDetailsPage = () => {
   if (!userDetails) return <div>Loading user details...</div>;
 
   return (
-    <div className="flex flex-col gap-5 max-w-4xl mx-auto p-5 text-white">
+    <div className="flex flex-col w-1/2 gap-4 max-w-4xl mx-auto p-5 text-white border rounded-lg border-gray-300 shadow-2xl bg-gray-800 pb-10">
       <h1 className="text-5xl font-bold text-white text-center">
         {userDetails.name}
       </h1>

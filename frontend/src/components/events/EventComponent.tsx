@@ -93,7 +93,7 @@ const EventComponent: React.FC<EventComponentProps> = ({
   };
 
   return (
-    <div className="w-full mx-auto border border-gray-300 rounded-lg overflow-hidden p-4 mb-5">
+    <div className="w-full mx-auto border border-gray-300 rounded-lg overflow-hidden p-4 mb-5 shadow-2xl bg-gray-800">
       <Helmet>
         <title>{event.name}</title>
         <meta name="description" content={event.description} />

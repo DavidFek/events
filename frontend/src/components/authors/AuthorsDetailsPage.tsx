@@ -19,7 +19,7 @@ const AuthorDetailsPage = () => {
   if (!authorDetails) return <div>Loading author details...</div>;
 
   return (
-    <div className="flex flex-col gap-5 max-w-4xl mx-auto p-5 text-white">
+    <div className="flex flex-col border w-1/2 max-w-4xl mx-auto p-5 text-white shadow-2xl bg-gray-800 gap-4 pb-10 border-gray-300 rounded-lg">
       <h1 className="text-5xl font-bold text-white text-center">
         {authorDetails.firstName} {authorDetails.lastName}
       </h1>

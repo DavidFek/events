@@ -20,7 +20,7 @@ const EventDetailsPage = () => {
   if (!eventDetails) return <div>Loading event details...</div>;
 
   return (
-    <div className="flex flex-col gap-5 max-w-4xl mx-auto p-5 text-white">
+    <div className="flex flex-col w-1/2 mx-auto border border-gray-300 rounded-lg overflow-hidden p-4 mb-5 shadow-2xl bg-gray-800 gap-4 pb-10">
       <h1 className="text-5xl font-bold text-white text-center">
         {eventDetails.name}
       </h1>
