@@ -1,10 +1,19 @@
 // import { useRouter } from "next/router";
 // import React from "react";
 
+import { Helmet } from "react-helmet";
+
 export default function MainPage() {
   //   const router = useRouter();
   return (
     <div className="flex justify-center items-center min-h-screen mx-10">
+      <Helmet>
+        <title>Main Page</title>
+        <meta
+          name="description"
+          content="Welcome to the main page for EVENTS."
+        />
+      </Helmet>
       <div>
         <h1 className="text-4xl font-bold py-6">Main Page</h1>
         <p>

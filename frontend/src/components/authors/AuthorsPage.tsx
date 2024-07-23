@@ -7,6 +7,7 @@ import { CreateAuthorDto } from "../../services/dto";
 import { formatISO } from "date-fns";
 import { useUser } from "../../providers/UserProvider";
 import addImage from "../../assets/add.png";
+import { Helmet } from "react-helmet";
 
 export default function AuthorsPage() {
   const [authors, setAuthors] = useState<Author[]>([]);
@@ -113,6 +114,10 @@ export default function AuthorsPage() {
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
+      <Helmet>
+        <title>Authors Page</title>
+        <meta name="description" content="Explore our list of authors." />
+      </Helmet>
       <h2 className="text-2xl font-bold mb-4">Authors Page</h2>
       <div className="flex gap-4 mb-8">
         <input

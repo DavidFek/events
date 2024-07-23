@@ -7,6 +7,7 @@ import { CreateEventDto } from "../../services/dto";
 import { formatISO } from "date-fns";
 import { useUser } from "../../providers/UserProvider";
 import addImage from "../../assets/add.png";
+import { Helmet } from "react-helmet";
 
 export default function EventsPage() {
   const [events, setEvents] = useState<EventType[]>([]);
@@ -111,6 +112,13 @@ export default function EventsPage() {
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
+      <Helmet>
+        <title>Events Page - Your Site Name</title>
+        <meta
+          name="description"
+          content="Explore our upcoming events and join us to connect, learn, and grow."
+        />
+      </Helmet>
       <h2 className="text-2xl font-bold mb-4">Events Page</h2>
       <div className="flex gap-4 mb-8">
         <input

@@ -7,6 +7,7 @@ import deleteImage from "../../assets/delete.png";
 import detailsImage from "../../assets/details.png";
 import updateImage from "../../assets/update.png";
 import addImage from "../../assets/add.png";
+import { Helmet } from "react-helmet";
 
 interface AuthorComponentProps {
   author: Author;
@@ -76,6 +77,11 @@ const AuthorComponent: React.FC<AuthorComponentProps> = ({
 
   return (
     <div className="w-full mx-auto border border-gray-300 rounded-lg overflow-hidden p-4 mb-5">
+      <Helmet>
+        <title>{author.firstName + " " + author.lastName}</title>
+        <meta name="specialization" content={author.specializations} />
+        {/* Other relevant meta tags */}
+      </Helmet>
       <div className="md:flex">
         <div className="w-full p-4 flex flex-col gap-6">
           <h2 className="text-3xl font-semibold underline text-center pb-8">

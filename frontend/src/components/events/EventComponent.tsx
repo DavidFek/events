@@ -9,6 +9,7 @@ import deleteImage from "../../assets/delete.png";
 import detailsImage from "../../assets/details.png";
 import updateImage from "../../assets/update.png";
 import addImage from "../../assets/add.png";
+import { Helmet } from "react-helmet";
 
 interface EventComponentProps {
   event: EventType;
@@ -93,6 +94,11 @@ const EventComponent: React.FC<EventComponentProps> = ({
 
   return (
     <div className="w-full mx-auto border border-gray-300 rounded-lg overflow-hidden p-4 mb-5">
+      <Helmet>
+        <title>{event.name}</title>
+        <meta name="description" content={event.description} />
+        {/* Other relevant meta tags */}
+      </Helmet>
       <div className="md:flex">
         <div className="w-full p-4 flex flex-col gap-6">
           <h2 className="text-3xl font-semibold underline text-center pb-8">
